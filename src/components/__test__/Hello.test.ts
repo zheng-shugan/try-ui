@@ -4,10 +4,14 @@ import Hello from '@/components/Hello.vue'
 
 describe('Hello.vue', () => {
   test('mount component', async () => {
-    const msg = 'Hello Vue'
+    const msg = 'Hello Vue & Vitest'
 
-    const wrapper = mount(Hello)
+    const wrapper = mount(Hello, {
+      props: {
+        msg: 'Hello Vue & Vitest',
+      },
+    })
 
-    expect(wrapper.text()).toContain(msg)
+    expect(wrapper.find('h1').text()).toContain(msg)
   })
 })
