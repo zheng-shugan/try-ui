@@ -1,0 +1,12 @@
+{
+  "name": "try-ui",
+  "version": "1.0.0",
+  "description": "作为最终打包产物，汇总所有的组件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
