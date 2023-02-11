@@ -1,0 +1,109 @@
+@import '../../../theme-chalk/common/var.scss';
+@import '../../../theme-chalk/mixins/button.scss';
+
+.t-button {
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #dcdfe6;
+  color: #333;
+  -webkit-appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin-left: 5px;
+  transition: .1s;
+  font-weight: 500;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  padding: 12px 20px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+$types: (
+  primary,
+  $color-primary),
+  (success, $color-success),
+  (danger, $color-danger),
+  (info, $color-info),
+  (warning, $color-warning
+), (text, $color-white);
+
+$sizes: (medium, 10px, 20px, 14px ), (small, 9px, 15px, 12px), (mini, 7px, 15px, 12px);
+
+// 按钮大小
+@each $size, $pValue1, $pValue2, $fontSize in $sizes {
+  .t-button.t-button--#{$size} {
+    padding: #{$pValue1} #{$pValue2};
+    font-size: #{$fontSize};
+  }
+}
+
+// 背景颜色
+@each $type,
+$color in $types {
+  .t-button--#{$type} {
+    background-color:#{$color};
+
+    color: $color-white;
+
+    @if $type == text {
+      color: $color-primary;
+      border: none;
+    }
+
+    &:hover {
+      @include adapt-brightness(1.05);
+    }
+
+    &:active {
+      @include adapt-brightness(0.98);
+    }
+  }
+}
+
+.t-button--default {
+  &:hover {
+    color: #409eff;
+    border-color: #c6e2ff;
+    background-color: #ecf5ff;
+  }
+
+  &:active {
+    @include adapt-brightness(0.98);
+  }
+}
+
+.is-disabled {
+  cursor: not-allowed;
+  &, &:hover, &:active {
+    opacity: 0.5;
+    @include adapt-brightness(1);
+  }
+}
+
+.t-button--default.is-disabled {
+  &:hover {
+    background-color: $color-white;
+    color: #333;
+  }
+}
+
+.is-round {
+  border-radius: 20px;
+  padding: 12px 23px;
+}
+
+.is-circle {
+  border-radius: 50%;
+  padding: 12px;
+}
+
+.is-loading {
+  pointer-events: none;
+  opacity: 0.5;
+}

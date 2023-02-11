@@ -1,0 +1,13 @@
+.t-button-group {
+  .t-button {
+    margin-left: 1px;
+
+    &:first-child {
+      border-radius: 4px 0px 0px 4px;
+    }
+
+    &:last-child {
+      border-radius: 0px 4px 4px 0px;
+    }
+  }
+}
