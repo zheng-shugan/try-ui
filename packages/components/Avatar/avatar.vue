@@ -32,7 +32,7 @@ export default defineComponent({
   </div>
 </template>
 
-<style>
+<style scoped>
 .avatar {
   width: 50px;
   height: 50px;
