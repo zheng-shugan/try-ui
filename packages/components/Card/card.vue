@@ -67,7 +67,9 @@ export default defineComponent({
     <!-- 使用img标签显示图片，绑定src和alt属性，监听load和error事件 -->
     <img :src="src" :alt="alt" @load="onLoad" @error="onError">
     <!-- 如果loading为true，显示一个模糊的div -->
-    <div v-if="loading" class="blur" :style="{ backgroundImage: gradient }" />
+    <transition>
+      <div v-if="loading" class="blur" :style="{ backgroundImage: gradient }" />
+    </transition>
   </div>
 </template>
 
@@ -89,18 +91,21 @@ export default defineComponent({
   left: 0;
   width: 100%;
   height: 100%;
-  filter: blur(10px);
-  /* 使用v-show指令来控制模糊div的显示和隐藏 */
-  transition: opacity 0.2s ease-out;
+  filter: blur(90px);
   /* 添加一个阴影效果 */
   box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.2);
 }
-
-.t-card .blur.v-show {
+/* 初始状态 */
+.v-enter-from {
   opacity: 1;
 }
-
-.t-card .blur.v-hide {
+/* 结束状态 */
+.v-leave-to{
   opacity: 0;
+}
+
+/* 过渡状态 */
+.v-enter-active, .v-leave-active {
+  transition: opacity .5s;
 }
 </style>
