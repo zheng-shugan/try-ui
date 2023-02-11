@@ -1,6 +1,7 @@
 {
   "extends": "./tsconfig.app.json",
   "exclude": [],
+  "include": ["./packages/**/*.ts", "./packages/try-ui/*.ts"],
   "compilerOptions": {
     "composite": true,
     "lib": [],
