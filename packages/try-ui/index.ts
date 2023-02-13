@@ -1,8 +1,15 @@
 import type { App } from 'vue'
-import { Button } from '../components/Button'
+import { Button, ButtonGroup } from '../components/Button'
+import { Avatar } from '../components/Avatar'
+import { TCard } from '../components/Card'
+import { Badge } from '../components/Badge'
 
 const components = [
   Button,
+  ButtonGroup,
+  Avatar,
+  TCard,
+  Badge,
 ]
 
 const install = (app: App) => {

@@ -1,0 +1,6 @@
+@mixin adapt-brightness($multiple) {
+  -webkit-filter: brightness($multiple);
+  -moz-filter: brightness($multiple);
+  -o-filter: brightness($multiple);
+  -ms-filter: brightness($multiple);
+}
