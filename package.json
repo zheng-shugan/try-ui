@@ -11,7 +11,10 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "docs:dev": "pnpm run --filter docs dev",
+    "docs:build": "pnpm run --filter docs build",
+    "docs:serve": "pnpm run --filter docs serve"
   },
   "dependencies": {
     "@antfu/eslint-config": "^0.34.1",
