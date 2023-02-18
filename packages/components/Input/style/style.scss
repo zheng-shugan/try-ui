@@ -1,0 +1,133 @@
+.t-input {
+    font-size: 14px;
+    display: inline-block;
+    position: relative;
+    height: 40px;
+  
+    .t-input__inner {
+      background-color: #fff;
+      border-radius: 4px;
+      border: 1px solid #dcdfe6;
+      box-sizing: border-box;
+      color: #606266;
+      display: flex;
+      flex-direction: row;
+      font-size: inherit;
+      line-height: 40px;
+      outline: none;
+      padding: 0 15px;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      &::placeholder {
+        color: #c2c2ca;
+      }
+  
+      &:hover {
+        border: 1px solid #c0c4cc;
+      }
+  
+      &:focus {
+        border: 1px solid #409eff;
+      }
+    }
+
+    .t-input__suffix {
+      position: absolute;
+      right: 10px;
+      height: 100%;
+      top: 0%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      cursor: pointer;
+      color: #c0c4cc;
+      img {
+        height: 50%;
+      }
+    }
+}
+
+// 被禁用时
+.t-input.is-disabled {
+  .t-input__inner {
+    background-color: #f5f7fa;
+    border-color: #e4e7ed;
+    color: #c0c4cc;
+    cursor: not-allowed;
+    &::placeholder {
+      color: #F56C6C;
+    }
+  }
+}
+
+.t-input.t-input--medium {
+  .t-input__inner {
+    height: 90%;
+    &::placeholder {
+      font-size: 15px;
+    }
+  }
+  .t-input__suffix {
+    position: absolute;
+    right: 10px;
+    height: 90%;
+    top: 0%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    color: #c0c4cc;
+    img {
+      height: 50%;
+    }
+  }
+}
+
+.t-input.t-input--small {
+  .t-input__inner {
+    height: 85%;
+
+    &::placeholder {
+      font-size: 14px;
+    }
+  }
+  .t-input__suffix {
+    position: absolute;
+    right: 10px;
+    height: 85%;
+    top: 0%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    color: #c0c4cc;
+    img {
+      height: 50%;
+    }
+  }
+}
+
+.t-input.t-input--mini {
+  .t-input__inner {
+    height: 80%;
+
+    &::placeholder {
+      font-size: 13px;
+    }
+  }
+  .t-input__suffix {
+    position: absolute;
+    right: 10px;
+    height: 80%;
+    top: 0%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    color: #c0c4cc;
+    img {
+      height: 50%;
+    }
+  }
+}

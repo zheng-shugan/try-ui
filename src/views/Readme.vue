@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import Hello from '@/components/Hello.vue'
 import Button from '@/components/Button.vue'
+import Input from '@/components/Input.vue'
 </script>
 
 <template>
@@ -13,12 +14,18 @@ import Button from '@/components/Button.vue'
           <router-link to="button">
             Button 按钮
           </router-link>
+          <hr>
+          <router-link to="input">
+            Input 输入框
+          </router-link>
         </li>
       </ul>
     </div>
     <div class="content">
       <!-- 组件主体呈现区 -->
       <Button />
+      <hr>
+      <Input />
     </div>
   </div>
 </template>
