@@ -2,11 +2,11 @@
   "name": "components",
   "version": "1.0.0",
   "description": "所有组件都放在这个文件架",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
 }
