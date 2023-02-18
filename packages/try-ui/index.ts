@@ -3,6 +3,7 @@ import { Button, ButtonGroup } from '../components/Button'
 import { Avatar } from '../components/Avatar'
 import { TCard } from '../components/Card'
 import { Badge } from '../components/Badge'
+import { Input } from '../components/Input'
 
 const components = [
   Button,
@@ -10,6 +11,7 @@ const components = [
   Avatar,
   TCard,
   Badge,
+  Input,
 ]
 
 const install = (app: App) => {
