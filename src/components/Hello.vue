@@ -2,7 +2,7 @@
 import { withDefaults } from 'vue'
 
 const props = withDefaults(defineProps<{ msg: string }>(), {
-  msg: 'Hello Vue',
+  msg: 'Hello Vue1',
 })
 
 const data = {
