@@ -1,0 +1,18 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "main": "index.js",
+  "scripts": {
+    "dev": "vitepress dev --config ./vite.config.ts",
+    "build": "vitepress build --config ./vite.config.ts",
+    "serve": "vitepress serve --config ./vite.config.ts"
+  },
+  "devDependencies": {
+    "vitepress": "1.0.0-alpha.46",
+    "vue": "^3.2.45"
+  }
+}
