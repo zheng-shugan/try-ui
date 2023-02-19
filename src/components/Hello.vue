@@ -19,10 +19,13 @@ function randomImg() {
 <template>
   <h1>{{ msg }}</h1>
   <t-button />
+  <hr>
   <TAvatar :src="randomImg()" :alt="data.alt" :shape="data.shape" />
+  <hr>
   <div class="listBox">
     <TCard v-for="i in 18" :key="i" :src="randomImg()" :alt="data.alt" :width="10" :height="15" :fillet=".5" />
   </div>
+  <hr>
 </template>
 
 <style scoped>

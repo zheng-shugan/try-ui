@@ -8,11 +8,18 @@ const router = createRouter({
       name: 'home',
       redirect: '/button',
       component: Readme,
-      children: [{
-        path: 'button',
-        name: 'button',
-        component: () => import('../components/Button.vue'),
-      }],
+      children: [
+        {
+          path: 'button',
+          name: 'button',
+          component: () => import('../components/Button.vue'),
+        },
+        {
+          path: 'input',
+          name: 'input',
+          component: () => import('../components/Input.vue'),
+        },
+      ],
     },
   ],
 })
