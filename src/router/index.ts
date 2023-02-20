@@ -19,6 +19,16 @@ const router = createRouter({
           name: 'input',
           component: () => import('../components/Input.vue'),
         },
+        {
+          path: 'avatar',
+          name: 'avatar',
+          component: () => import('../components/Avatar.vue'),
+        },
+        {
+          path: 'card',
+          name: 'card',
+          component: () => import('../components/Card.vue'),
+        },
       ],
     },
   ],
