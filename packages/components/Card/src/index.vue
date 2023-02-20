@@ -73,39 +73,5 @@ export default defineComponent({
   </div>
 </template>
 
-<style scoped>
-.t-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.t-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.t-card .blur {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  filter: blur(90px);
-  /* 添加一个阴影效果 */
-  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.2);
-}
-/* 初始状态 */
-.v-enter-from {
-  opacity: 1;
-}
-/* 结束状态 */
-.v-leave-to{
-  opacity: 0;
-}
-
-/* 过渡状态 */
-.v-enter-active, .v-leave-active {
-  transition: opacity .5s;
-}
+<style lang="scss" src="../style/style.scss" scoped>
 </style>
