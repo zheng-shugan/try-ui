@@ -1,49 +1,50 @@
 <script lang="ts" setup>
-import { type RouteRecordName, onBeforeRouteUpdate } from 'vue-router'
 import Hello from '@/components/Hello.vue'
 import Button from '@/components/Button.vue'
 import Input from '@/components/Input.vue'
-import Avatar from '@/components/Avatar.vue'
-import Card from '@/components/Card.vue'
-import router from '@/router'
+import menuList from '@/router/index.ts'
+// console.log(menuList.options.routes[0].children)
+import { useRouter } from 'vue-router'
+import { ref } from 'vue'
+const activeIndex = ref(0)
+const router = useRouter()
+const switchMenu = (item: { name: any }, index: number) => {
+  activeIndex.value = index
+  router.push({
+    name: item.name
+  })
+}
 
-let currentRoute: RouteRecordName | null | undefined = router.currentRoute.value.name
-onBeforeRouteUpdate((to, _from) => {
-  currentRoute = to.name
-})
+
+
 </script>
 
 <template>
-  <Hello />
+<Hello />
+
   <div class="container">
     <div class="title">
       <!-- 组件名称 -->
       <ul>
-        <li>
-          <router-link to="button">
-            Button 按钮
-          </router-link>
-          <hr>
-          <router-link to="input">
-            Input 输入框
-          </router-link>
-          <hr>
-          <router-link to="avatar">
-            Avatar 头像组件
-          </router-link>
-          <hr>
-          <router-link to="card">
-            Card 图片组件
-          </router-link>
-        </li>
+
+        <li v-for="(item, index) in menuList.options.routes[0].children" :key="index"
+          :class="{ active: activeIndex == index }" @click="switchMenu(item, index)">
+          {{ item.name }}</li>
+
+
       </ul>
     </div>
     <div class="content">
       <!-- 组件主体呈现区 -->
-      <Button v-show="currentRoute === 'button'" />
-      <Input v-show="currentRoute === 'input'" />
-      <Avatar v-show="currentRoute === 'avatar'" />
-      <Card v-show="currentRoute === 'card'" />
+
+      <!-- <Button /> -->
+      <!-- <Textare /> -->
+      <router-view></router-view>
+
+      <!-- <Button />
+      <hr>
+      <Input /> -->
+
     </div>
   </div>
 </template>
@@ -61,6 +62,7 @@ onBeforeRouteUpdate((to, _from) => {
 
     ul li {
       list-style: none;
+      cursor: pointer;
 
       a {
         color: #333;
@@ -71,6 +73,10 @@ onBeforeRouteUpdate((to, _from) => {
           color: $color-primary;
         }
       }
+    }
+
+    ul li.active {
+      color: blue;
     }
   }
 

@@ -1,0 +1,19 @@
+{
+  "name": "create-try",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "bin": {
+    "create-try": "index.js",
+    "create-app": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "command-line-args": "^5.2.1"
+  }
+}
