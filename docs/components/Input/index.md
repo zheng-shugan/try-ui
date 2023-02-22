@@ -2,7 +2,7 @@
 title: 'Input'
 ---
 
-## Input 输入框
+# Input 输入框
 
 通过鼠标或键盘输入字符
 
@@ -12,7 +12,7 @@ title: 'Input'
 >
 > 不支持 `v-model` 修饰符。
 
-### 基础用法
+## 基础用法
 
 <t-input placeholder="请输入内容" />
 
@@ -24,7 +24,7 @@ title: 'Input'
 
 
 
-### 禁用状态
+## 禁用状态
 
 <t-input placeholder="请输入内容" />
 
@@ -34,21 +34,9 @@ title: 'Input'
 
 ```
 
-### 
+## 
 
-### 可清空
-
-<t-input placeholder="请输入内容" />
-
-代码：
-
-```vue
-
-```
-
-### 
-
-### 密码框
+## 可清空
 
 <t-input placeholder="请输入内容" />
 
@@ -58,9 +46,9 @@ title: 'Input'
 
 ```
 
-### 
+## 
 
-### 尺寸
+## 密码框
 
 <t-input placeholder="请输入内容" />
 
@@ -70,4 +58,16 @@ title: 'Input'
 
 ```
 
-### 
+## 
+
+## 尺寸
+
+<t-input placeholder="请输入内容" />
+
+代码：
+
+```vue
+
+```
+
+## 
