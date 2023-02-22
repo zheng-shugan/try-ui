@@ -1,3 +1,4 @@
+import '../theme-chalk/index.scss'
 import type { App } from 'vue'
 import { Button, ButtonGroup } from '../components/Button'
 import { Avatar } from '../components/Avatar'
