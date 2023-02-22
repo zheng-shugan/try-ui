@@ -8,11 +8,33 @@ const router = createRouter({
       name: 'home',
       redirect: '/button',
       component: Readme,
-      children: [{
-        path: 'button',
-        name: 'button',
-        component: () => import('../components/Button.vue'),
-      }],
+      children: [
+        {
+          path: 'button',
+          name: 'button',
+          component: () => import('../components/Button.vue'),
+      },
+      {
+        path: 'textarea',
+        name: 'textarea',
+        component: () => import('../../packages/components/textarea/doc/doc.vue'),
+        },
+        {
+          path: 'input',
+          name: 'input',
+          component: () => import('../components/Input.vue'),
+        },
+        {
+          path: 'avatar',
+          name: 'avatar',
+          component: () => import('../components/Avatar.vue'),
+        },
+        {
+          path: 'card',
+          name: 'card',
+          component: () => import('../components/Card.vue'),
+        },
+      ],
     },
   ],
 })

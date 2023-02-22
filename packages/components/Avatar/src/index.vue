@@ -32,28 +32,5 @@ export default defineComponent({
   </div>
 </template>
 
-<style scoped>
-.avatar {
-  width: 50px;
-  height: 50px;
-  overflow: hidden;
-}
-
-.avatar-square {
-  border-radius: 4px;
-}
-
-.avatar-circle {
-  border-radius: 50%;
-}
-
-.avatar-hexagon {
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-}
-
-.avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+<style lang="scss" src="../style/style.scss" scoped>
 </style>
