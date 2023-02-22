@@ -20,8 +20,8 @@ features:
     title: 框架工具
     details: Vue3 TS Vite …
   - icon: 💌
-    title: Contributeor
-    details: 大家的昵称
+    title: Contributors
+    details: 书淦,记超,俊达,晓巧,郅旎,一凡
   - icon:
       dark: /dark-feature-icon.svg
       light: /light-feature-icon.svg

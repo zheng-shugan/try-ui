@@ -13,3 +13,61 @@ title: 'Input'
 > 不支持 `v-model` 修饰符。
 
 ### 基础用法
+
+<t-input placeholder="请输入内容" />
+
+代码：
+
+```vue
+
+```
+
+
+
+### 禁用状态
+
+<t-input placeholder="请输入内容" />
+
+代码：
+
+```vue
+
+```
+
+### 
+
+### 可清空
+
+<t-input placeholder="请输入内容" />
+
+代码：
+
+```vue
+
+```
+
+### 
+
+### 密码框
+
+<t-input placeholder="请输入内容" />
+
+代码：
+
+```vue
+
+```
+
+### 
+
+### 尺寸
+
+<t-input placeholder="请输入内容" />
+
+代码：
+
+```vue
+
+```
+
+### 
