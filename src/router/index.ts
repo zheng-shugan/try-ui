@@ -34,6 +34,11 @@ const router = createRouter({
           name: 'card',
           component: () => import('../components/Card.vue'),
         },
+        {
+          path: 'sapce',
+          name: 'space',
+          component: () => import('../components/Space.vue'),
+        },
       ],
     },
   ],
