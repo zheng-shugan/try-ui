@@ -27,6 +27,10 @@ const sidebar: DefaultTheme.Sidebar = {
         {
           text: 'Avatar 头像',
           link: '/components/Avatar/',
+        },
+        {
+          text: 'Space 间距',
+          link: '/components/Space/',
         }
       ],
     },
