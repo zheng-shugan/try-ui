@@ -12,9 +12,6 @@
         <p class="h2">基础用法</p>
         <p class="introduce">当利用space间距后，能够更加便捷的调整间距~更多更便捷操作后续添加！</p>
         <t-space>
-            <div><t-button>
-                默认按钮
-            </t-button></div>
             <t-button>
                 默认按钮
             </t-button>
