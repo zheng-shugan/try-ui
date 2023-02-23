@@ -20,6 +20,14 @@ const sidebar: DefaultTheme.Sidebar = {
           text: 'Input 输入框',
           link: '/components/Input/',
         },
+        {
+          text: 'Card 图片卡',
+          link: '/components/Card/',
+        },
+        {
+          text: 'Avatar 头像',
+          link: '/components/Avatar/',
+        }
       ],
     },
   ],
