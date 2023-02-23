@@ -17,7 +17,7 @@ const router = createRouter({
       {
         path: 'textarea',
         name: 'textarea',
-        component: () => import('../../packages/components/textarea/doc/doc.vue'),
+        component: () => import('../components/Textarea.vue'),
         },
         {
           path: 'input',
