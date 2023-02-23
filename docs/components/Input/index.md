@@ -72,8 +72,6 @@ export default {
 </template>
 ```
 
-
-
 ### 禁用状态
 <em>实现禁用输入框，无法编辑输入框内文本。</em><br>
 <div> 
@@ -83,6 +81,7 @@ export default {
 代码：
 
 ```vue
+
 <script lang="ts">
 export default {
   data() {
