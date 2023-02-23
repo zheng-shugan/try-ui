@@ -18,7 +18,7 @@ export default {
 
 <template>
   <div>
-    <h2>Input 输入框(暂且如此)</h2>
+    <h2>Input 输入框</h2>
     <em>通过鼠标或键盘输入字符。</em>
     <p /><p />
     <h3>基础用法</h3>
