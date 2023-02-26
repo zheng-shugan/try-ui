@@ -1,41 +1,6 @@
 ---
 title: 'Input'
 ---
-<style scoped>
-h2 {
-  font-weight: 500;
-  margin-top: 0px;
-}
-
-h3 {
-  margin: 55px 0 10px;
-  font-weight: 400;
-}
-
-em {
-  font-size: 14px;
-  color: #5e6d82;
-  line-height: 3em;
-  font-style: normal;
-}
-</style>
-<script lang="ts">
-export default {
-  data() {
-    return {
-      // 双向绑定数据
-      value: '',
-      // 单向绑定数据
-      bindValue: '啊哈我被单向绑定啦！',
-      // 输入框尺寸
-      medium: 'medium', // mini/small/medium
-      small: 'small', // mini/small/medium
-      mini: 'mini', // mini/small/medium
-    }
-  },
-}
-</script>
-
 ## Input 输入框
 
 通过鼠标或键盘输入字符
@@ -222,3 +187,50 @@ export default {
   </div>
 </template>
 ```
+
+
+
+### Attributes
+
+| 属性名        | 说明               | 类型    | 预设值 |
+| :------------ | :----------------- | :------ | :----- |
+| size          | 尺寸               | string  | ——     |
+| value         | 输入框双向绑定数据 | string  | ——     |
+| disabled      | 是否禁用           | string  | false  |
+| clearable     | 是否可以一键清空   | boolean | false  |
+| show-password | 是否隐藏输入框内容 | boolean | false  |
+
+
+<style scoped>
+h2 {
+  font-weight: 500;
+  margin-top: 0px;
+}
+h3 {
+  margin: 55px 0 10px;
+  font-weight: 400;
+}
+
+em {
+  font-size: 14px;
+  color: #5e6d82;
+  line-height: 3em;
+  font-style: normal;
+}
+</style>
+<script lang="ts">
+export default {
+  data() {
+    return {
+      // 双向绑定数据
+      value: '',
+      // 单向绑定数据
+      bindValue: '啊哈我被单向绑定啦！',
+      // 输入框尺寸
+      medium: 'medium', // mini/small/medium
+      small: 'small', // mini/small/medium
+      mini: 'mini', // mini/small/medium
+    }
+  },
+}
+</script>
