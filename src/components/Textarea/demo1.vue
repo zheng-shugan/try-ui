@@ -5,7 +5,7 @@
       placeholder="请输入内容"
       @input="textareaInpt"
     ></t-textarea>
-    <textarea-pre/>
+    <tPreview compName="Textarea" fileName="demo1"/>
   </template>
   
   <!-- js -->

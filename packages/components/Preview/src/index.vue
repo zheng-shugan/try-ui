@@ -19,6 +19,11 @@ const props = defineProps({
     type: String,
     default: "",
     require: true,
+  },
+  fileName:{
+    type: String,
+    default: "",
+    require: true,
   }
 });
 const showCode = ref(false);
@@ -35,7 +40,7 @@ const sourceCode = ref("");
 async function getSourceCode() {
    sourceCode.value = (
     await import(
-      `../../../../src/components/${props.compName}.vue?raw`
+      `../../../../src/components/${props.compName}/${props.fileName}.vue?raw`
     )
     
   ).default;
