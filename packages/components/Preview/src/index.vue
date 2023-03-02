@@ -1,15 +1,8 @@
-
 <template>
   <div class="pre-code-box">
-    <span class="m-copy" v-if="showCode" @click="copyCode"
-      ><i class="m-icon-copy"></i
-    ></span>
+    <span class="m-copy" v-if="showCode" @click="copyCode"><i class="m-icon-copy"></i></span>
     <transition name="slide-fade">
-      <pre
-        class="language-html"
-        v-if="showCode"
-       
-      ><code class="language-html">{{ sourceCode }}</code></pre>
+      <pre class="language-html" v-if="showCode"><code class="language-html">{{ sourceCode }}</code></pre>
     </transition>
     <div class="showCode" @click="showOrhideCode">
       <span>{{ showCode ? "隐藏代码" : "显示代码" }}</span>
@@ -27,11 +20,11 @@ const props = defineProps({
     default: "",
     require: true,
   },
-  demoName: {
+  fileName:{
     type: String,
     default: "",
     require: true,
-  },
+  }
 });
 const showCode = ref(false);
 const border = ref("1px solid rgba(0,0,0,.06)");
@@ -45,11 +38,12 @@ const showOrhideCode = () => {
 };
 const sourceCode = ref("");
 async function getSourceCode() {
-    sourceCode.value = (
-      await import(
-        /* @vite-ignore */ '../../packages/components/textarea/doc/demo1.vue?raw'
-      )
-    ).default;
+   sourceCode.value = (
+    await import(
+      `../../../../src/components/${props.compName}/${props.fileName}.vue?raw`
+    )
+    
+  ).default;
 }
 onMounted(() => {
   getSourceCode();
@@ -65,17 +59,21 @@ onMounted(() => {
   position: fixed;
   z-index: -99999999;
 }
+
 .slide-fade-enter-active {
   transition: all 0.1s ease-out;
 }
+
 .slide-fade-leave-active {
   transition: all 0.1s cubic-bezier(1, 0.5, 0.8, 1);
 }
+
 .slide-fade-enter-from,
 .slide-fade-leave-to {
   transform: translateY(-10px);
   opacity: 0.5;
 }
+
 .pre-code-box {
   width: 100%;
   height: auto;
@@ -84,19 +82,23 @@ onMounted(() => {
   margin: 0px 0 15px 0;
   position: relative;
   transition: all 0.15s ease-out;
+
   .m-copy {
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
+
     i {
       font-size: 22px;
       color: #b7b3b3;
+
       &:hover {
         color: #000;
       }
     }
   }
+
   .showCode {
     width: 100%;
     line-height: 40px;
@@ -109,19 +111,26 @@ onMounted(() => {
     box-shadow: 0px 16px 15px -16px rgb(0 0 0 / 10%);
     color: #505050;
     cursor: pointer;
+
     i {
       margin-left: 10px;
     }
+
     i.rotate {
       transform: rotate(180deg);
     }
+
     &:hover {
       background: #f9f9f9;
       color: #0e80eb;
     }
   }
+
   &:hover {
     box-shadow: 0px 16px 15px -16px rgb(0 0 0 / 10%);
   }
-}
-</style>
+
+  .language-html {
+    background-color: #ccc;
+  }
+}</style>

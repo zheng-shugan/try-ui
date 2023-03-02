@@ -4,6 +4,8 @@ import { Avatar } from '../components/Avatar'
 import { TCard } from '../components/Card'
 import { Badge } from '../components/Badge'
 import { Input } from '../components/Input'
+import { Textarea } from '../components/Textarea'
+import { Preview } from '../components/Preview'
 
 const components = [
   Button,
@@ -12,6 +14,8 @@ const components = [
   TCard,
   Badge,
   Input,
+  Textarea,
+  Preview
 ]
 
 const install = (app: App) => {

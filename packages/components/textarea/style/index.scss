@@ -1,0 +1,65 @@
+.mzl-textarea-default{
+  width:auto;
+  height:auto;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  textarea{
+    padding:0;
+    outline: none;
+    border:1px solid #dcdfe6f6;
+    transition: all .2s ease;
+    border-radius: 3px;
+    padding:8px 8px 10px 8px;
+    box-sizing: border-box;
+    font-size:14px;
+    color:#606266;
+    font-family: auto;
+    &:focus,&:active,&:focus-visible{
+      border:1px solid #0e80eb
+    }
+    &:focus-visible{
+      border:1px solid #0e80eb
+    }
+  }
+  .max-length-box{
+    font-size:14px;
+    color:#606266;
+    position: absolute;
+    bottom:10px;
+    right:10px;
+  }
+  textarea::placeholder { /* 大部分现代浏览器 */
+    color:    #c6c8cc;
+    font-size: 13px;
+  }
+  textarea::-webkit-scrollbar {
+    width: 5px;
+    height: 1px;
+  }
+    
+  textarea::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: #d5d5d6;
+  }
+    
+  textarea::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background: #fff;
+  }
+}
+.mzl-textarea-disabled{
+  textarea{
+    cursor: no-drop;
+    color:#c3bfbf;
+    &:focus,&:active,&:focus-visible{
+      border:1px solid #dcdfe6f6
+    }
+    &:focus-visible{
+      border:1px solid #dcdfe6f6
+    }
+  }
+  .max-length-box{
+    color:#c3bfbf
+  }
+}

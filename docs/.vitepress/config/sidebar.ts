@@ -27,6 +27,10 @@ const sidebar: DefaultTheme.Sidebar = {
         {
           text: 'Avatar 头像',
           link: '/components/Avatar/',
+        },
+        {
+          text: 'Textarea 文本域',
+          link: '/components/Textarea/',
         }
       ],
     },
