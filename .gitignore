@@ -1,3 +1,11 @@
+# 下面是 .gitignore 文件的配置规则：
+# 1. # 开头的行是注释，将被 Git 忽略。
+# 2. / 结尾的目录名表示忽略该目录下的所有文件。
+# 3. * 表示匹配零个或多个字符。
+# 4. ? 表示匹配任意一个字符。
+# 5. ! 表示取反，即不忽略匹配到的文件或目录。
+# 6. [] 表示匹配方括号内的任意一个字符。
+
 # Logs
 logs
 *.log
@@ -16,7 +24,7 @@ coverage
 
 /cypress/videos/
 /cypress/screenshots/
-/docs/.vitepress/cache
+/docs/.vitepress/cache/deps/
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -26,3 +34,4 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+.eslintrc.js
