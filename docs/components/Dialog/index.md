@@ -96,9 +96,4 @@ em {
   line-height: 3em;
   font-style: normal;
 }
-/* .dialog-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
 </style>
