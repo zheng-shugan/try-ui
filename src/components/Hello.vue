@@ -1,10 +1,4 @@
-<script lang="ts" setup>
-import { withDefaults } from 'vue'
-
-const props = withDefaults(defineProps<{ msg: string }>(), {
-  msg: 'Hello Vue1',
-})
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <div />
