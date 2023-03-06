@@ -34,6 +34,16 @@ const router = createRouter({
           name: 'card',
           component: () => import('../components/Card.vue'),
         },
+        {
+          path: 'icon',
+          name: 'icon',
+          component: () => import('../components/Icon.vue'),
+        },
+        {
+          path: 'dialog',
+          name: 'dialog',
+          component: () => import('../components/Dialog.vue'),
+        },
       ],
     },
   ],

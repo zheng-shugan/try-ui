@@ -6,6 +6,8 @@ import { Badge } from '../components/Badge'
 import { Input } from '../components/Input'
 import { Textarea } from '../components/Textarea'
 import { Preview } from '../components/Preview'
+import { Icon } from '../components/Icon'
+import { Dialog } from '../components/Dialog'
 
 const components = [
   Button,
@@ -15,7 +17,9 @@ const components = [
   Badge,
   Input,
   Textarea,
-  Preview
+  Preview,
+  Icon,
+  Dialog
 ]
 
 const install = (app: App) => {

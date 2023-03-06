@@ -31,6 +31,10 @@ const sidebar: DefaultTheme.Sidebar = {
         {
           text: 'Textarea 文本域',
           link: '/components/Textarea/',
+        },
+        {
+          text: 'Dialog 对话框',
+          link: '/components/Dialog/',
         }
       ],
     },

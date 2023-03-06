@@ -1,0 +1,69 @@
+// 对话框下的遮罩样式
+.mask {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+// 对话框整体样式
+.dialog {
+    height: auto;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0.5rem;
+
+    background-color: white;
+    padding: 10px;
+}
+.dragarea {
+    background-color: blue;
+     height: 10px;
+      width: 100%;
+}
+// 对话框标题样式
+.title {
+    font-size: 25px;
+    color: black;
+    margin: 10px;
+    text-align: center;
+}
+// 对话框文本内容样式
+.msg {
+    font-size: 15px;
+    color: gray;
+    margin: 10px;
+    padding: 5px;
+}
+// 对话框下方按键样式
+.btn-group {
+    text-align: end;
+}
+// 普通按键样式
+button {
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #dcdfe6;
+    color: #409eff;
+    text-align: center;
+    box-sizing: border-box;
+    outline: none;
+    margin-left: 5px;
+    transition: .1s;
+    font-weight: 500;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+// 确认键样式-改变背景色和字体色
+.btn-confirm {
+    background-color: #409eff;
+    color: #fff;
+}

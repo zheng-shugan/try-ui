@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3917703 */
+  src: url('iconfont.woff2') format('woff2'),
+       url('iconfont.woff') format('woff'),
+       url('iconfont.ttf') format('truetype');
+      //  url('iconfont.woff2?t=1677832110819') format('woff2'),
+      //  url('iconfont.woff?t=1677832110819') format('woff'),
+      //  url('iconfont.ttf?t=1677832110819') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  display: block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-loading:before {
+  content: "\e6ca";
+}
+
+.icon-error:before {
+  content: "\e65c";
+}
+
+.icon-a-icon_eye_password:before {
+  content: "\e610";
+}
+
+// 浅加一点动画效果
+.icon-spin {
+  animation-name: rotate;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
