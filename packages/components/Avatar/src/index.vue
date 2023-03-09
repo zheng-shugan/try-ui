@@ -9,6 +9,10 @@ export default defineComponent({
       type: String as PropType<string>,
       required: true,
     },
+    size: {
+      type: Number as PropType<Number>,
+      default: 3,
+    },
     alt: {
       type: String as PropType<string>,
       default: '',
@@ -22,12 +26,15 @@ export default defineComponent({
     shapeClass(): string {
       return `avatar-${this.shape}`
     },
+    sizeStyle(): string {
+      return `width:${this.size}rem;height:${this.size}rem`
+    },
   },
 })
 </script>
 
 <template>
-  <div class="avatar" :class="[shapeClass]">
+  <div class="avatar" :class="[shapeClass]" :style="sizeStyle">
     <img :src="src" :alt="alt">
   </div>
 </template>
