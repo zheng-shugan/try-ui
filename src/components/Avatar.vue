@@ -1,8 +1,10 @@
 <script lang="ts" setup>
 import { randomImg } from '../utils/randomImg.ts'
 const data = {
-  alt: '纳尼？',
+  userName: ['JChaooo', 'Try-UI', '尽力局', '力'],
   shape: ['square', 'circle', 'hexagon'],
+  color: '#a2d188',
+  randColor: ['#f9c975', '#c4e1f6', '#fadeeb', '#f596a1', '#0c9a89'],
 }
 </script>
 
@@ -14,23 +16,17 @@ const data = {
     <h3>基础用法</h3>
     <em>使用 src 和 shape 属性来设置图像的路径和形状</em>
 
-    <div class="listBox">
-      <!-- <div>square</div> -->
-      <TAvatar :src="`${randomImg()}`" :alt="data.alt" :shape="data.shape[0]" :size="2" />
-      <TAvatar :src="`${randomImg()}`" :alt="data.alt" :shape="data.shape[0]" />
-      <TAvatar :src="`${randomImg()}`" :alt="data.alt" :shape="data.shape[0]" :size="4" />
+    <div class="container">
+      <t-avatar :src="randomImg()" />
+      <t-avatar :src="randomImg()" :size="4" />
+      <t-avatar :src="randomImg()" :size="5" :shape="data.shape[2]" />
+      <t-avatar :src="randomImg()" :size="5" :shape="data.shape[0]" />
     </div>
-    <div class="listBox">
-      <!-- <div>circle</div> -->
-      <TAvatar :src="`${randomImg()}`" :alt="data.alt" :shape="data.shape[1]" :size="2" />
-      <TAvatar :src="`${randomImg()}`" :alt="data.alt" :shape="data.shape[1]" />
-      <TAvatar :src="`${randomImg()}`" :alt="data.alt" :shape="data.shape[1]" :size="4" />
-    </div>
-    <div class="listBox">
-      <!-- <div>hexagon</div> -->
-      <TAvatar :src="`${randomImg()}`" :alt="data.alt" :shape="data.shape[2]" :size="2" />
-      <TAvatar :src="`${randomImg()}`" :alt="data.alt" :shape="data.shape[2]" />
-      <TAvatar :src="`${randomImg()}`" :alt="data.alt" :shape="data.shape[2]" :size="4" />
+    <div class="container">
+      <t-avatar mode="char" :ph-font="data.userName[0]" />
+      <t-avatar :size="4" mode="char" :ph-font="data.userName[1]" />
+      <t-avatar :size="5" mode="char" :shape="data.shape[2]" :ph-font="data.userName[2]" :ph-font-color="data.color" />
+      <t-avatar :size="5" mode="char" :shape="data.shape[0]" :char-mode-colors="data.randColor" :ph-font="data.userName[3]" />
     </div>
   </div>
 </template>
@@ -53,7 +49,7 @@ em {
   font-style: normal;
 }
 
-.listBox {
+.container {
   margin: 10px;
   /* 设置为弹性布局 */
   display: flex;
