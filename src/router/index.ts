@@ -13,11 +13,11 @@ const router = createRouter({
           path: 'button',
           name: 'button',
           component: () => import('../components/Button.vue'),
-      },
-      {
-        path: 'textarea',
-        name: 'textarea',
-        component: () => import('../components/Textarea/demo1.vue'),
+        },
+        {
+          path: 'textarea',
+          name: 'textarea',
+          component: () => import('../components/Textarea/demo1.vue'),
         },
         {
           path: 'input',
@@ -43,6 +43,11 @@ const router = createRouter({
           path: 'dialog',
           name: 'dialog',
           component: () => import('../components/Dialog.vue'),
+        },
+        {
+          path: 'upload',
+          name: 'upload',
+          component: () => import('../components/Upload.vue'),
         },
       ],
     },

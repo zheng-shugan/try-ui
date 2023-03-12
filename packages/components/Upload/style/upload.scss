@@ -1,0 +1,96 @@
+@import '../../../theme-chalk/common/var.scss';
+@import '../../../theme-chalk/mixins/upload.scss';
+
+.t-upload {
+  position: relative;
+  width: 100%;
+  padding: 25px;
+}
+
+.t-upload--content {
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  border: 2px dotted $color-primary;
+  cursor: pointer;
+  border-radius: 10px;
+  @include changeBrightness(0.85);
+
+  &:hover {
+    @include changeBrightness(1);
+  }
+
+  input {
+    display: none;
+  }
+
+
+  .icon {
+    position: absolute;
+    top: 55px;
+    font-weight: 400;
+    font-size: 14px;
+    color: $color-primary;
+  }
+}
+
+.t-upload--list {
+  display: flex;
+  max-width: 800px;
+  flex-wrap: wrap;
+  justify-content: start;
+  position: relative;
+
+  .t-upload--item {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    border: 2px dotted $color-primary;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+
+    .t-upload--mask {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      overflow: hidden;
+      background-color: rgba($color: #000000, $alpha: 0.4);
+
+      .progressInfo {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        height: 50px;
+        transform: translate(0, -50%);
+        text-align: center;
+
+        .t-upload--progress {
+          position: absolute;
+          background-color: $color-primary;
+          transition: all 0.2s;
+          top: 50%;
+          width: 150px;
+          height: 20px;
+        }
+
+        .currentProgress {
+          width: 150px;
+          text-align: center;
+          color: #fff;
+          margin-bottom: 25px;
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
