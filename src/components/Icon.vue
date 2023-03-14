@@ -108,28 +108,13 @@
     <li class="icon-item">
       <span class="demo-svg-icon">
         <t-icon type="menu" /><br />
-        <span class="icon-name" data-clipboard-text="menu"
-          >menu</span
-        >
+        <span class="icon-name" id="iconName">menu </span>
       </span>
     </li>
   </ul>
 </template>
 
-<script lang="ts">
-// 尝试复刻饿了么的点击复制功能
-// import Clipboard from 'clipboard' 
-// export default function copy(){
-//     let clip = new Clipboard(".icon-item");
-//     clip.on("success", (e) => {
-//       alert("已复制到您的剪贴板");
-//       clip.destroy();
-//     });
-//     clip.on("error", (e) => {
-//       alert("该浏览器不支持自动复制");
-//       clip.destroy();
-//     });
-// }
+<script lang="ts" setup>
 </script>
     
 <style lang="scss" scoped>

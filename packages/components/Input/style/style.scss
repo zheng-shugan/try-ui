@@ -1,51 +1,53 @@
 .t-input {
-    font-size: 14px;
-    display: inline-block;
-    position: relative;
-    height: 40px;
-  
-    .t-input__inner {
-      background-color: #fff;
-      border-radius: 4px;
-      border: 1px solid #dcdfe6;
-      box-sizing: border-box;
-      color: #606266;
-      display: flex;
-      flex-direction: row;
-      font-size: inherit;
-      line-height: 40px;
-      outline: none;
-      padding: 0 15px;
-      align-items: center;
-      height: 100%;
-      width: 100%;
-      &::placeholder {
-        color: #c2c2ca;
-      }
-  
-      &:hover {
-        border: 1px solid #c0c4cc;
-      }
-  
-      &:focus {
-        border: 1px solid #409eff;
-      }
-    }
+  font-size: 14px;
+  display: inline-block;
+  position: relative;
+  height: 40px;
 
-    .t-input__suffix {
-      position: absolute;
-      right: 10px;
-      height: 100%;
-      top: 0%;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      cursor: pointer;
-      color: #c0c4cc;
-      img {
-        height: 50%;
-      }
+  .t-input__prefix,
+  .t-input__suffix {
+    position: absolute;
+    right: 10px;
+    height: 100%;
+    top: 0%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    color: #c0c4cc;
+    img {
+      height: 50%;
     }
+  }
+}
+
+.t-input__inner {
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #dcdfe6;
+  box-sizing: border-box;
+  color: #606266;
+  display: flex;
+  flex-direction: row;
+  font-size: inherit;
+  line-height: 40px;
+  outline: none;
+  padding: 0 15px;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+
+  &::placeholder {
+    color: #c2c2ca;
+  }
+
+  &:hover {
+    border: 1px solid #c0c4cc;
+  }
+
+  &:focus {
+    border: 1px solid #409eff;
+  }
 }
 
 // 被禁用时
@@ -55,19 +57,23 @@
     border-color: #e4e7ed;
     color: #c0c4cc;
     cursor: not-allowed;
+
     &::placeholder {
       color: #F56C6C;
     }
   }
 }
 
+// 三个size
 .t-input.t-input--medium {
   .t-input__inner {
     height: 90%;
+
     &::placeholder {
       font-size: 15px;
     }
   }
+
   .t-input__suffix {
     position: absolute;
     right: 10px;
@@ -78,6 +84,7 @@
     align-items: center;
     cursor: pointer;
     color: #c0c4cc;
+
     img {
       height: 50%;
     }
@@ -92,6 +99,7 @@
       font-size: 14px;
     }
   }
+
   .t-input__suffix {
     position: absolute;
     right: 10px;
@@ -102,6 +110,7 @@
     align-items: center;
     cursor: pointer;
     color: #c0c4cc;
+
     img {
       height: 50%;
     }
@@ -116,6 +125,7 @@
       font-size: 13px;
     }
   }
+
   .t-input__suffix {
     position: absolute;
     right: 10px;
@@ -126,8 +136,92 @@
     align-items: center;
     cursor: pointer;
     color: #c0c4cc;
+
     img {
       height: 50%;
     }
   }
+}
+
+// 复合型输入框前缀/后缀样式
+.t-input.t-input-group.t-input-append,
+.t-input.t-input-group.t-input-prepend {
+  line-height: normal;
+  display: inline-table;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+
+  .t-input__inner {
+    border-radius: 0 4px 4px 0;
+  }
+
+  //复合输入框
+  .t-input__prepend,
+  .t-input__append {
+    background-color: #f5f7fa;
+    color: #909399;
+    vertical-align: middle;
+    display: table-cell;
+    position: relative;
+    border: 1px solid #dcdfe6;
+    border-radius: 4 0px 0px 4px;
+    padding: 0 20px;
+    width: 1px;
+    white-space: nowrap;
+  }
+
+  .t-input__append {
+    border-radius: 0 4px 4px 0px;
+  }
+}
+
+.t-input.t-input-group.t-input-append {
+  .t-input__inner {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+}
+
+// 图标控件样式
+.t-input__prefix {
+  position: absolute;
+  left: 10px;
+  height: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #c0c4cc;
+  font-size: 15px;
+}
+
+.no-cursor {
+  cursor: default;
+}
+
+.t-input__prefix {
+  position: absolute;
+  width: 20px;
+  cursor: default;
+  left: 10px;
+
+  .t-input__inner {
+    padding-left: 30px !important;
+  }
+}
+
+.t-input__suffix {
+  position: absolute;
+  width: 20px;
+  cursor: default;
+  right: 10px;
+
+  .t-input__inner {
+    padding-right: 30px !important;
+  }
+}
+
+.t-input__prefix .t-input__inner {
+  padding-right: 30px !important;
 }
