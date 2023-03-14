@@ -63,10 +63,10 @@ export default {
     <h3>带图标的输入框</h3>
     <em>那么接下来就不得不请出Input+Icon的小小联动体了</em><br>
     <em>让我想想应该如何去实现</em><br>
-    <t-input prefixIcon="calendar" />
-    <br /><br />
-    <t-input suffixIcon="psw" />
-    <p>备注：这里可传入show-password,true启用</p>
+    <t-input prefix-icon="calendar" />
+    <br><br>
+    <t-input suffix-icon="psw" />
+    <p>备注：这里可传入prefix-icon/suffix-icon， 值为icon-type启用</p>
 
     <p /><p />
     <h3>复合型输入框</h3>
@@ -79,7 +79,7 @@ export default {
         </template>
       </t-input>
     </div>
-    <br />
+    <br>
     <div>
       <t-input placeholder="请输入网址">
         <template #append>
