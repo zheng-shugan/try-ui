@@ -11,7 +11,7 @@ title: 'Input'
 >
 > 不支持 `v-model` 修饰符。
 
-### 基础用法
+## 基础用法
 <em>实现输入框输入数据的双向绑定。</em><br>
 <div>
     <t-input v-model="value1" />
@@ -38,7 +38,7 @@ export default {
 </template>
 ```
 
-### 禁用状态
+## 禁用状态
 <em>实现禁用输入框，无法编辑输入框内文本。</em><br>
 <div> 
     <t-input v-model="value2" :disabled="true" />
@@ -66,7 +66,7 @@ export default {
 ```
 
 
-### 可清空
+## 可清空
 <em>点击图标，实现输入框内容清空</em><br>
 <div>
     <t-input v-model="value3" :clearable="true" />
@@ -94,7 +94,7 @@ export default {
 ```
 
 
-### 密码框
+## 密码框
 <em>点击图标，对界面显示/隐藏密码</em><br>
 <div>
     <t-input v-model="value4" :show-password="true" />
@@ -121,7 +121,7 @@ export default {
 </template>
 ```
 
-### 带Icon的输入框
+## 带Icon的输入框
 <em>那么接下来就不得不请出Input+Icon的小小联动体了。你只需要`prefix-icon="(IconType名)"`。</em><br>
 <em>但是这里有极其不完善的地方：图标和文字重叠。</em><br>
 <t-input prefix-icon="calendar" />
@@ -138,7 +138,7 @@ export default {
 <t-input suffix-icon="psw" />
 ```
 
-### 复合型输入框
+## 复合型输入框
 <em>支持复合型输入框，你仅需要在`<t-input></t-input>`标签内使用：`<template #prepend(前置)/#append(后置)>,不妨试一下在template中插入其他组件，比如Icon什么的，当然有以下组件我们还在开发中w</em><br>
 <div>
   <div>
@@ -174,7 +174,7 @@ export default {
 </t-input>
 ```
 
-### 尺寸
+## 尺寸
 <em>
 除了默认尺寸，Tinput额外定义了三种输入框尺寸，它们分别是medium,small,mini
 </em>
@@ -221,7 +221,7 @@ export default {
 </template>
 ```
 
-### v-bind绑定
+## v-bind绑定
 <em>继承原生v-bind单向绑定。</em><br>
 <div>
     <t-input :value="bindValue" />
@@ -250,15 +250,17 @@ export default {
 
 
 
-### Attributes
+## Attributes
 
-| 属性名        | 说明               | 类型    | 预设值 |
-| :------------ | :----------------- | :------ | :----- |
-| size          | 尺寸               | string  | ——     |
-| value         | 输入框双向绑定数据 | string  | ——     |
-| disabled      | 是否禁用           | string  | false  |
-| clearable     | 是否可以一键清空   | boolean | false  |
-| show-password | 是否隐藏输入框内容 | boolean | false  |
+| 属性名        | 说明               | 类型                      | 预设值 |
+| :------------ | :----------------- | :------------------------ | :----- |
+| size          | 尺寸               | string                    | ——     |
+| value         | 输入框双向绑定数据 | string                    | ——     |
+| disabled      | 是否禁用           | boolean                    | false  |
+| clearable     | 是否可以一键清空   | boolean                   | false  |
+| show-password | 是否隐藏输入框内容 | boolean                   | false  |
+| prefix-icon   | 输入框内嵌前置图标 | icon-type(Icon组件type值) | ——     |
+| fuffix-icon   | 输入框内嵌后置图标 | icon-type                 | ——     |
 
 
 <style lang="scss" scoped>
