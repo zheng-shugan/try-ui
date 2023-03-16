@@ -33,12 +33,6 @@ const content = computed<string>(() => {
 })
 </script>
 
-<!-- <script lang="ts"> -->
-<!-- export default { -->
-<!--  name: 'TBadge', -->
-<!-- } -->
-<!-- </script> -->
-
 <template>
   <div>
     <slot />
