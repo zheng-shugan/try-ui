@@ -10,7 +10,7 @@ const props = withDefaults(defineProps<badgeProps>(), {
   type: BadgeTypes.danger,
 })
 export interface badgeProps {
-  value: string
+  value: string | number
   max: number
   isDot: boolean
   hidden: boolean
