@@ -1,0 +1,14 @@
+@import "../../../theme-chalk/common/var";
+
+$types: (primary, $color-primary),
+        (success, $color-success),
+        (danger, $color-danger),
+        (info, $color-info),
+        (warning, $color-warning),
+        (text, $color-white);
+
+@each $type, $color in $types {
+  .t-badge--#{$type} {
+    color: #{$color};
+  }
+}
