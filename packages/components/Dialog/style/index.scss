@@ -50,29 +50,3 @@
 .btn-group {
     text-align: end;
 }
-
-// 普通按键样式
-button {
-    display: inline-block;
-    line-height: 1;
-    white-space: nowrap;
-    cursor: pointer;
-    background: #fff;
-    border: 1px solid #dcdfe6;
-    color: #409eff;
-    text-align: center;
-    box-sizing: border-box;
-    outline: none;
-    margin-left: 5px;
-    transition: .1s;
-    font-weight: 500;
-    padding: 12px 20px;
-    font-size: 14px;
-    border-radius: 4px;
-}
-
-// 确认键样式-改变背景色和字体色
-.btn-confirm {
-    background-color: #409eff;
-    color: #fff;
-}
