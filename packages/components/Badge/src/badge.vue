@@ -9,6 +9,7 @@ const props = withDefaults(defineProps<badgeProps>(), {
   hidden: false,
   type: BadgeTypes.danger,
 })
+
 export interface badgeProps {
   value: string | number
   max: number
@@ -16,6 +17,7 @@ export interface badgeProps {
   hidden: boolean
   type: BadgeTypes
 }
+
 defineComponent({
   name: 'TBadge',
 })
@@ -40,12 +42,9 @@ const content = computed<string>(() => {
     <transition>
       <sup
         v-show="!props.hidden && (content || isDot)"
-        v-text="content"
-      />
+      >
+        <span :class="`t-badge--${props.type}`">{{ content }}</span>
+      </sup>
     </transition>
   </div>
 </template>
-
-<style scoped>
-
-</style>
