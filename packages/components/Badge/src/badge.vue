@@ -9,13 +9,15 @@ const props = withDefaults(defineProps<badgeProps>(), {
   hidden: false,
   type: BadgeTypes.danger,
 })
+
 export interface badgeProps {
-  value: string
+  value: string | number
   max: number
   isDot: boolean
   hidden: boolean
   type: BadgeTypes
 }
+
 defineComponent({
   name: 'TBadge',
 })
@@ -33,12 +35,6 @@ const content = computed<string>(() => {
 })
 </script>
 
-<!-- <script lang="ts"> -->
-<!-- export default { -->
-<!--  name: 'TBadge', -->
-<!-- } -->
-<!-- </script> -->
-
 <template>
   <div>
     <slot />
@@ -46,12 +42,9 @@ const content = computed<string>(() => {
     <transition>
       <sup
         v-show="!props.hidden && (content || isDot)"
-        v-text="content"
-      />
+      >
+        <span :class="`t-badge--${props.type}`">{{ content }}</span>
+      </sup>
     </transition>
   </div>
 </template>
-
-<style scoped>
-
-</style>

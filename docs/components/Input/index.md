@@ -11,10 +11,10 @@ title: 'Input'
 >
 > 不支持 `v-model` 修饰符。
 
-### 基础用法
+## 基础用法
 <em>实现输入框输入数据的双向绑定。</em><br>
 <div>
-    <t-input v-model="value" />
+    <t-input v-model="value1" />
 </div>
 
 代码：
@@ -30,6 +30,7 @@ export default {
   },
 }
 </script>
+
 <template>
   <div>
     <t-input v-model="value" />
@@ -37,16 +38,15 @@ export default {
 </template>
 ```
 
-### 禁用状态
+## 禁用状态
 <em>实现禁用输入框，无法编辑输入框内文本。</em><br>
 <div> 
-    <t-input v-model="value" :disabled="true" />
+    <t-input v-model="value2" :disabled="true" />
 </div>
 
 代码：
 
 ```vue
-
 <script lang="ts">
 export default {
   data() {
@@ -57,19 +57,19 @@ export default {
   },
 }
 </script>
+
 <template>
-  <div> 
+  <div>
     <t-input v-model="value" :disabled="true" />
   </div>
 </template>
 ```
 
-### 
 
-### 可清空
+## 可清空
 <em>点击图标，实现输入框内容清空</em><br>
 <div>
-    <t-input v-model="value" :clearable="true" />
+    <t-input v-model="value3" :clearable="true" />
 </div>
 
 代码：
@@ -85,6 +85,7 @@ export default {
   },
 }
 </script>
+
 <template>
   <div>
     <t-input v-model="value" :clearable="true" />
@@ -92,12 +93,11 @@ export default {
 </template>
 ```
 
-### 
 
-### 密码框
+## 密码框
 <em>点击图标，对界面显示/隐藏密码</em><br>
 <div>
-    <t-input v-model="value" :show-password="true" />
+    <t-input v-model="value4" :show-password="true" />
 </div>
 
 代码：
@@ -113,6 +113,7 @@ export default {
   },
 }
 </script>
+
 <template>
   <div>
     <t-input v-model="value" :show-password="true" />
@@ -120,17 +121,73 @@ export default {
 </template>
 ```
 
-### 
+## 带Icon的输入框
+<em>那么接下来就不得不请出Input+Icon的小小联动体了。你只需要`prefix-icon="(IconType名)"`。</em><br>
+<em>但是这里有极其不完善的地方：图标和文字重叠。</em><br>
+<t-input prefix-icon="calendar" />
+<p />
+<t-input suffix-icon="psw" />
 
-### 尺寸
-<em>除了默认尺寸，Tinput额外定义了三种输入框尺寸，它们分别是medium,small,mini</em><br>
+蛙趣这里↑有大问题！！！怎么不显示Icon？！！！！啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊！！！！！！！！！！！！！！！！！
+
+代码：
+```vue
+<!-- 这里省略了数据绑定喔 -->
+<t-input prefix-icon="calendar" />
+
+<t-input suffix-icon="psw" />
+```
+
+## 复合型输入框
+<em>支持复合型输入框，你仅需要在`<t-input></t-input>`标签内使用：`<template #prepend(前置)/#append(后置)>,不妨试一下在template中插入其他组件，比如Icon什么的，当然有以下组件我们还在开发中w</em><br>
+<div>
+  <div>
+    <t-input placeholder="请输入网址">
+      <template #prepend>
+        https://
+      </template>
+    </t-input>
+  </div>
+  <br>
+  <div>
+    <t-input placeholder="请输入网址">
+      <template #append>
+        .com
+      </template>
+    </t-input>
+  </div>
+</div>
+
+代码:
+```vue
+<!-- 这里省略了数据绑定喔 -->
+<t-input placeholder="请输入网址">
+  <template #prepend>
+    https://
+  </template>
+</t-input>
+
+<t-input placeholder="请输入网址">
+  <template #append>
+    .com
+  </template>
+</t-input>
+```
+
+## 尺寸
+<em>
+除了默认尺寸，Tinput额外定义了三种输入框尺寸，它们分别是medium,small,mini
+</em>
+
+<br>
+
 <div>
     <em>size=medium</em><br>
-    <t-input v-model="value" :size="medium" /><br>
+    <t-input :size="medium" /><br>
     <em>size=small</em><br>
-    <t-input v-model="value" :size="small" /><br>
+    <t-input :size="small" /><br>
     <em>size=mini</em><br>
-    <t-input v-model="value" :size="mini" /><br>
+    <t-input :size="mini" /><br>
 </div>
 
 代码：
@@ -150,6 +207,7 @@ export default {
   },
 }
 </script>
+
 <template>
   <div>
     <em>size=medium</em><br>
@@ -158,11 +216,12 @@ export default {
     <t-input v-model="value" :size="small" /><br>
     <em>size=mini</em><br>
     <t-input v-model="value" :size="mini" /><br>
-  <div>
+    <div />
+  </div>
 </template>
 ```
 
-### v-bind绑定
+## v-bind绑定
 <em>继承原生v-bind单向绑定。</em><br>
 <div>
     <t-input :value="bindValue" />
@@ -181,6 +240,7 @@ export default {
   },
 }
 </script>
+
 <template>
   <div>
     <t-input :value="bindValue" />
@@ -190,18 +250,20 @@ export default {
 
 
 
-### Attributes
+## Attributes
 
-| 属性名        | 说明               | 类型    | 预设值 |
-| :------------ | :----------------- | :------ | :----- |
-| size          | 尺寸               | string  | ——     |
-| value         | 输入框双向绑定数据 | string  | ——     |
-| disabled      | 是否禁用           | string  | false  |
-| clearable     | 是否可以一键清空   | boolean | false  |
-| show-password | 是否隐藏输入框内容 | boolean | false  |
+| 属性名        | 说明               | 类型                      | 预设值 |
+| :------------ | :----------------- | :------------------------ | :----- |
+| size          | 尺寸               | string                    | ——     |
+| value         | 输入框双向绑定数据 | string                    | ——     |
+| disabled      | 是否禁用           | boolean                    | false  |
+| clearable     | 是否可以一键清空   | boolean                   | false  |
+| show-password | 是否隐藏输入框内容 | boolean                   | false  |
+| prefix-icon   | 输入框内嵌前置图标 | icon-type(Icon组件type值) | ——     |
+| fuffix-icon   | 输入框内嵌后置图标 | icon-type                 | ——     |
 
 
-<style scoped>
+<style lang="scss" scoped>
 h2 {
   font-weight: 500;
   margin-top: 0px;
@@ -223,7 +285,10 @@ export default {
   data() {
     return {
       // 双向绑定数据
-      value: '',
+      value1: '',
+      value2: '',
+      value3: '',
+      value4: '',
       // 单向绑定数据
       bindValue: '啊哈我被单向绑定啦！',
       // 输入框尺寸

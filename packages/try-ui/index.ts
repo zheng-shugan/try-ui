@@ -4,10 +4,11 @@ import { Avatar } from '../components/Avatar'
 import { TCard } from '../components/Card'
 import { Badge } from '../components/Badge'
 import { Input } from '../components/Input'
-import { Textarea } from '../components/Textarea'
+import { Textarea } from '../components/textarea'
 import { Preview } from '../components/Preview'
 import { Icon } from '../components/Icon'
 import { Dialog } from '../components/Dialog'
+import { Upload } from '../components/Upload'
 
 const components = [
   Button,
@@ -19,7 +20,8 @@ const components = [
   Textarea,
   Preview,
   Icon,
-  Dialog
+  Dialog,
+  Upload,
 ]
 
 const install = (app: App) => {

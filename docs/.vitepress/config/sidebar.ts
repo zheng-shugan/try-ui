@@ -3,8 +3,19 @@ import type { DefaultTheme } from 'vitepress'
 const sidebar: DefaultTheme.Sidebar = {
   '/': [
     {
-      text: '返回主页',
-      link: '/',
+      text: '简介',
+      items: [
+        {
+          text: '组件介绍',
+          link: '/introduce',
+        },
+        {
+          text: '安装指南',
+        },
+        {
+          text: '快速上手',
+        },
+      ],
     },
     {
       text: '组件展示',
@@ -35,7 +46,7 @@ const sidebar: DefaultTheme.Sidebar = {
         {
           text: 'Dialog 对话框',
           link: '/components/Dialog/',
-        }
+        },
       ],
     },
   ],

@@ -1,31 +1,28 @@
-<script lang="ts">
-import '../iconfont/iconfont'
-import { defineComponent,computed } from 'vue'
-import { iconProps } from '../types'
+<template>
+    <svg class="icon" aria-hidden="true">
+        <use v-bind:xlink:href="`#icon-${props.type}`"></use>
+    </svg>
+</template>
 
-export default defineComponent({
-    props: iconProps,
-    setup(props) {
-        const iconName = computed(() => {
-            return `.icon-${props.name}`
-        })
-
-        function showIt() {
-            alert('你点击了我')
-        }
-
-        return {
-            iconName,
-            showIt
-        };
-    },
-})
+<script lang="ts" setup>
+    const props = defineProps({
+        type: {
+            type: String,
+            required : true
+        },
+    })
 </script>
 
-<template>
-    <!-- <svg @click="showIt" class="icon"><use :xlink-href="iconName"></use></svg> -->
-    <h2>Icon啊Icon，你为何显示不了？</h2>
-    <i @click="showIt" :class="iconName"></i>
-</template>
-  
-<style lang="scss" src="../iconfont/icon.scss"></style>
+<style scoped>
+i {
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+.icon {
+    width: 4em; height: 4em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+ }
+</style>
