@@ -10,7 +10,7 @@ const props = withDefaults(defineProps<badgeProps>(), {
   type: BadgeTypes.danger,
 })
 export interface badgeProps {
-  value: string
+  value: string | number
   max: number
   isDot: boolean
   hidden: boolean
@@ -32,12 +32,6 @@ const content = computed<string>(() => {
   return `${props.value}`
 })
 </script>
-
-<!-- <script lang="ts"> -->
-<!-- export default { -->
-<!--  name: 'TBadge', -->
-<!-- } -->
-<!-- </script> -->
 
 <template>
   <div>
