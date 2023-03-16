@@ -1,14 +1,8 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
 import basic from './Dialog/dialog_1_basic.vue'
 import test1 from './Dialog/dialog_2_test1.vue'
 import test2 from './Dialog/dialog_3_test2.vue'
 import drag from './Dialog/dialog_4_draggable.vue'
-
-const dialogVisible = ref(false)
-const showDialog = () => {
-  dialogVisible.value = true
-}
 </script>
 
 <template>
