@@ -17,6 +17,7 @@ import drag from './Dialog/dialog_4_draggable.vue'
   <h3>自定义内容</h3>
   <em>对话框的内容可以是anything！！比如一个表格或表单。</em><br>
   <test1 />
+
   <h3>自定义按键</h3>
   <em>按键区的元素自己传，当然可以diy啦~当然还可以加一些奇奇怪怪的东西。</em><br>
   <test2 />

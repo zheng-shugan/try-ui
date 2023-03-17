@@ -29,4 +29,4 @@ const buttonClass = [
   <button :class="buttonClass" :disabled="disabled" type="button">
     <span v-if=" $slots.default "><slot /></span>
   </button>
-</template>=/
+</template>
