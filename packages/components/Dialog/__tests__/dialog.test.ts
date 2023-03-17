@@ -7,7 +7,7 @@ describe('test of dialog', () => {
   // Hello.test.ts似乎是自带的，？？难道说可以自动生成测试文件嘛？它现在之所以通过不了，是咱们改了那个Hello里面msg相关东西
   // 官网上对各种API有详细讲述，很多，很多，555555555555555555555
 
-  // 举个栗子，title是必须有的，这个测试通过
+  // 举个栗子
   test('should have title', () => {
     const title = ''
 
@@ -19,7 +19,7 @@ describe('test of dialog', () => {
 
     expect(wrapper.find('div').text()).toContain(title)
   })
-  // 承接上面那个栗子↑——slot可有可无，所以这个必须有slot的测试无法通过
+  // 承接上面那个栗子↑——×
   test('should have msg-slot', () => {
     const wrapper = mount(Dialog, {
       slots: {
@@ -29,28 +29,56 @@ describe('test of dialog', () => {
 
     expect(wrapper.text()).toContain('msg-slot test')
   })
-  // 再来一个栗子，一个测试文件要写蛮多测试的，然后可以用describe给test分类，我这儿就先放一个里面了
-  test('emits "confirm" event when confirm button is clicked', async () => {
-    const wrapper = mount(Dialog, {
-      props: {
-        title: 'title test',
-      },
-      slots: {
-        default: 'msg-slot test',
-      },
-    })
+  // 一个测试文件要写蛮多测试的，然后可以用describe给test分类，我这儿就先放一个里面了
+  // 问了问chatGPT，555这个家伙真nb↓
 
-    await wrapper.find('.btn-confirm').trigger('click')
-    expect(wrapper.emitted('handleConfirm')).toHaveLength(1)
+  // 测试默认值
+  test('renders with default values', () => {
+    const wrapper = mount(Dialog)
+    expect(wrapper.vm.$props.title).toBe('title')
+    expect(wrapper.vm.$props.modelValue).toBe(false)
+    expect(wrapper.vm.$props.draggable).toBe(false)
+    expect(wrapper.find('.dialog').exists()).toBe(false)
   })
-
-  // 难过自己写的测试都通不过，问了问chatGPT，555这个家伙真nb↓
-  // 测试弹出对话框是否能正常弹出
-  // 然而我发现了一个Dialog组件严重错误：该组件是基于组件内部一个按钮点击触发，也就是说，我把一个button与关闭和确认取消毫不相关的按钮封装进了这里面！！而且还承载着显示/不显示对话框的关键功能！！！啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
-  test('should render dialog when button is clicked', async () => {
+  // 测试对话框唤起前状态
+  test('hides the dialog on initial render', () => {
     const wrapper = mount(Dialog)
     expect(wrapper.find('.dialog').exists()).toBe(false)
-    await wrapper.find('button').trigger('click')
-    expect(wrapper.find('.dialog').exists()).toBe(true)
   })
+  // 测试对话框能否正常显示——×
+  test('shows the dialog when triggered', async () => {
+    const wrapper = mount(Dialog, {
+      props: { modelValue: true },
+    })
+    await wrapper.vm.$nextTick()
+    expect(wrapper.find('.dialog').exists()).toBe(true)
+    expect(wrapper.find('.mask').exists()).toBe(true)
+  })
+  // 测试点击按钮后对话框状态——×
+  test('closes the dialog when clicked on close button', async () => {
+    const wrapper = mount(Dialog, {
+      props: { modelValue: true },
+    })
+    await wrapper.vm.$nextTick()
+    expect(wrapper.find('.dialog').exists()).toBe(true)
+    wrapper.find('t-button').trigger('click')
+    await wrapper.vm.$nextTick()
+    expect(wrapper.find('.dialog').exists()).toBe(false)
+    expect(wrapper.find('.mask').exists()).toBe(false)
+  })
+  // test('renders the correct title', () => {
+  //   const title = 'My Dialog'
+  //   const wrapper = mount(Dialog, {
+  //     props: { title },
+  //   })
+  //   expect(wrapper.find('.title').text()).toBe(title)
+  // })
+
+  // test('renders the correct message', () => {
+  //   const msg = 'Hello World!'
+  //   const wrapper = mount(Dialog, {
+  //     slots: { msg },
+  //   })
+  //   expect(wrapper.find('.msg').text()).toBe(msg)
+  // })
 })
