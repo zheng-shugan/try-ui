@@ -6,90 +6,65 @@ title: 'Dialog'
 在保留当前页面状态的情况下，告知用户并承载相关操作。
 
 ## 基础用法
-<em>点击该区域弹出弹框</em>
-<em>需要`modelValue`属性, 它接收`Boolean`, 为`true`时显示`Dialog`。</em><br />
-<em>`title`是对话框标题, 是可选的，默认值为空。</em><br />
-<em>`msg`是对话框文本内容, 是必选的，默认值为"文本内容"。</em><br />
-<em>`confirmText`是确认键文本内容, 是必选的，默认值为"确认"。</em><br />
-<em>`concelText`是取消键文本内容, 是可选的，默认值为"取消"。</em><br />
-<!-- 使用t-dialog -->
-<t-dialog title="俺是标题" cancelText="delete" confirmText="confirm">
-  <span>俺是对话框文本内容啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈！</span>
+<em>需要`modelValue`属性, 它接收`Boolean`, 为`true`时显示`Dialog`。</em><br>
+<basic /><br>
+<!-- 
+<t-button @click="showDialog">
+  点击此处查看对话框
+</t-button>
+<t-dialog v-model="dialogVisible" title="你唤起了对话框">
+  <template #msg>
+    <span>这是对话框内容。</span>
+  </template>
+  <template #btn>
+    <t-button @click="dialogVisible = false">
+      取消
+    </t-button>
+    <t-button @click="dialogVisible = false">
+      确认
+    </t-button>
+  </template>
 </t-dialog>
+<br> -->
+<tPreview compName="Dialog" fileName="dialog_1_basic"/>
 
-代码：
-
-```vue
-<t-dialog title="俺是标题" cancelText="delete" confirmText="confirm">
-  <span>俺是对话框文本内容啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈！</span>
-</t-dialog>
-```
 ## 自定义内容
-<em>对话框内(t-dialog标签中)可以是任何东西, 一段文字/一个表单/一个表格……可以加入其他组件嵌套使用喔！</em>
-  <!-- 使用t-dialog -->
-<t-dialog title="下面有个输入框喔！">
-  <span>俺是对话框文本内容</span><br /><br />
-  <t-input placeholder="请输入内容" />
-</t-dialog>
+<em>对话框的内容可以是anything！！比如一个表格或表单。</em><br>
+<test1 /><br>
+<tPreview compName="Dialog" fileName="dialog_2_test1"/>
 
-代码：
+## 自定义按键
+<em>按键区的元素自己传，当然可以diy啦~当然还可以加一些奇奇怪怪的东西。</em><br>
+<test2 /><br>
+<tPreview compName="Dialog" fileName="dialog_3_test2"/>
 
-```vue
-<t-dialog title="下面有个输入框喔！">
-  <span>俺是对话框文本内容</span><br /><br />
-  <t-input placeholder="请输入内容" />
-</t-dialog>
-```
 ## 可拖拽
-<em>鼠标于标题处按下即可拖拽对话框(但是与此同时, 你必须有一个title区域, 也就是你必须要给title传值), 松开停止拖拽</em>
-<em>`draggable`是是否进行拖拽，是可选的，默认值为"false"。当你打算draggable=true时, 可以直接简写成draggable</em>
-<!-- 使用t-dialog -->
-<t-dialog title="点我拽一拽~" draggable>
-  <span>啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈！</span>
-</t-dialog>
-
-代码：
-
-```vue
-<t-dialog title="点我拽一拽~" draggable>
-  <span>啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈！</span>
-</t-dialog>
-```
+<em>鼠标于标题处按下即可拖拽对话框, 松开停止拖拽，我总觉得它拽起来摇摇晃晃的，是不是得取整数值呀qvq</em>
+<em>`draggable`是是否进行拖拽，是可选的，默认值为"false"。当你打算draggable=true时, 可以直接简写成draggable。</em><br>
+<drag /><br>
+<tPreview compName="Dialog" fileName="dialog_4_draggable"/>
 
 ## Attributes
 
 | 属性名      | 说明         | 类型    | 预设值 |
 | :---------- | :----------- | :------ | :----- |
 | title       | 对话框标题   | string  | ——     |
-| cancelText  | 取消键键名   | string  | "取消" |
-| confirmText | 确认键键名   | string  | "确认" |
 | draggable   | 是否可以拖动 | boolean | false  |
 
+<script lang="ts" setup>
+import basic from '../../../src/components/Dialog/dialog_1_basic.vue'
+import test1 from '../../../src/components/Dialog/dialog_2_test1.vue'
+import test2 from '../../../src/components/Dialog/dialog_3_test2.vue'
+import drag from '../../../src/components/Dialog/dialog_4_draggable.vue'
 
-<!-- 尝试解决对话框示例在文档里无法居中展示问题 -->
-<!-- <script lang="ts">
-    import { onMounted } from 'vue'
-    setup() {
-        onMounted(() => {window.addEventListener('resize', this.centerDialog)})
-        function centerDialog() {
-            const dialog = this.$refs.dialog.$el
-            dialog.style.top = (window.innerHeight - dialog.offsetHeight) / 2 + 'px'
-            dialog.style.left = (window.innerWidth - dialog.offsetWidth) / 2 + 'px'
-        }
-        function showDialog() {
-            this.visible = true
-            this.$nextTick(() => {
-                this.centerDialog();
-            })
-        }
+import { ref } from 'vue'
 
-        return {
-            centerDialog,
-            showDialog,
-        }
-    } 
-</script> -->
-<!-- 本篇文档样式预设 -->
+const dialogVisible = ref(false)
+const showDialog = () => {
+  dialogVisible.value = true
+}
+</script>
+
 <style scoped>
 h2 {
   font-weight: 500;

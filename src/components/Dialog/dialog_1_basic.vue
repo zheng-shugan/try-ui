@@ -25,22 +25,3 @@ const showDialog = () => {
     </template>
   </t-dialog>
 </template>
-
-<style lang="scss" scoped>
-h2 {
-  font-weight: 500;
-  margin-top: 0px;
-}
-
-h3 {
-  margin: 55px 0 10px;
-  font-weight: 400;
-}
-
-em {
-  font-size: 14px;
-  color: #5e6d82;
-  line-height: 3em;
-  font-style: normal;
-}
-</style>
