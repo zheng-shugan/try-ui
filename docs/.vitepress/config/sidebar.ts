@@ -47,6 +47,10 @@ const sidebar: DefaultTheme.Sidebar = {
           text: 'Dialog 对话框',
           link: '/components/Dialog/',
         },
+        {
+          text: 'Icon 图标',
+          link: '/components/Icon/',
+        },
       ],
     },
   ],

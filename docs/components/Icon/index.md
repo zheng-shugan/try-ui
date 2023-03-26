@@ -1,4 +1,3 @@
-<template>
   <h2>Icon 图标</h2>
   <em>提供一点可能用到的图标，后续会根据需求更改现有图标。下文将展示每个图标的样式以及它们的type值，并说明使用方法。</em><br>
 
@@ -135,7 +134,6 @@
         <span class="icon-name">faxian</span>
       </span>
     </li>
-
     <li class="icon-item">
       <span class="demo-svg-icon">
         <t-icon type="saoyisao" /><br>
@@ -221,7 +219,6 @@
       </span>
     </li>
   </ul>
-</template>
 
 <style lang="scss" scoped>
 .demo-icon-list {
