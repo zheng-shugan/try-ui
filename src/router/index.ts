@@ -14,11 +14,11 @@ const router = createRouter({
           name: 'button',
           component: () => import('../components/Button.vue'),
         },
-        {
-          path: 'textarea',
-          name: 'textarea',
-          component: () => import('../components/Textarea/demo1.vue'),
-        },
+        // {
+        //   path: 'textarea',
+        //   name: 'textarea',
+        //   component: () => import('../components/Textarea/demo1.vue', '../components/Textarea/demo2.vue'),
+        // },
         {
           path: 'input',
           name: 'input',

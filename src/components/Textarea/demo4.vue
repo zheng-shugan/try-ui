@@ -3,15 +3,12 @@
   <t-textarea
     v-model="textareaVal"
     placeholder="请输入内容"
-    @input="textareaInpt"
+    focusColor="#ec3437"
   ></t-textarea>
 </template>
   
   <!-- js -->
-  <script setup lang="ts">
+  <script setup>
 import { ref } from "vue";
 const textareaVal = ref("");
-const textareaInpt = (e) => {
-  console.log(e);
-};
 </script>
