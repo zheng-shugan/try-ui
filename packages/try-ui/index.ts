@@ -9,6 +9,7 @@ import { Preview } from '../components/Preview'
 import { Icon } from '../components/Icon'
 import { Dialog } from '../components/Dialog'
 import { Upload } from '../components/Upload'
+import { Result } from '../components/Result'
 
 const components = [
   Button,
@@ -22,6 +23,7 @@ const components = [
   Icon,
   Dialog,
   Upload,
+  Result,
 ]
 
 const install = (app: App) => {
