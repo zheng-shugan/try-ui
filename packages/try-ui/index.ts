@@ -10,6 +10,7 @@ import { Icon } from '../components/Icon'
 import { Dialog } from '../components/Dialog'
 import { Upload } from '../components/Upload'
 import { Result } from '../components/Result'
+import { Pagination } from '../components/Pagination'
 
 const components = [
   Button,
@@ -24,6 +25,7 @@ const components = [
   Dialog,
   Upload,
   Result,
+  Pagination,
 ]
 
 const install = (app: App) => {

@@ -51,6 +51,10 @@ const sidebar: DefaultTheme.Sidebar = {
           text: 'Icon 图标',
           link: '/components/Icon/',
         },
+        {
+          text: 'Pagination 分页器',
+          link: '/components/Pagination/',
+        },
       ],
     },
   ],

@@ -49,6 +49,11 @@ const router = createRouter({
           name: 'upload',
           component: () => import('../components/Upload.vue'),
         },
+        {
+          path: 'pagination',
+          name: 'pagination',
+          component: () => import('../components/Pagination.vue'),
+        },
       ],
     },
   ],
