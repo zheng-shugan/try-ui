@@ -38,10 +38,13 @@ export default {
     <em>除了默认尺寸，Tinput额外定义了三种输入框尺寸，它们分别是medium,small,mini</em><br>
     <em>size=medium</em><br>
     <t-input :size="medium" /><br>
+    <t-input :size="medium" prefix-icon="daohang" /><br>
     <em>size=small</em><br>
     <t-input :size="small" /><br>
+    <t-input :size="small" prefix-icon="daohang" /><br>
     <em>size=mini</em><br>
     <t-input :size="mini" /><br>
+    <t-input :size="mini" prefix-icon="daohang" /><br>
     <p>备注：这里可传入size</p>
     <p /><p />
     <h3>非正式-v-bind绑定</h3>
@@ -63,9 +66,9 @@ export default {
     <h3>带图标的输入框</h3>
     <em>那么接下来就不得不请出Input+Icon的小小联动体了</em><br>
     <em>让我想想应该如何去实现</em><br>
-    <t-input prefix-icon="calendar" />
+    <t-input prefix-icon="wode" />
     <br><br>
-    <t-input suffix-icon="psw" />
+    <t-input suffix-icon="daohang" />
     <p>备注：这里可传入prefix-icon/suffix-icon， 值为icon-type启用</p>
 
     <p /><p />

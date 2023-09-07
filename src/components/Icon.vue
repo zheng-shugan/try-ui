@@ -8,10 +8,10 @@
   <h3>扩展用法-消息小红点</h3>
   <em>可以设置dot属性，让图标右上角展示一个小红点。</em><br>
   <em>同时设置badge属性，图标右上角会展示相应的徽标。</em><br>
-  <t-icon type="wode" dot badage="999+" />
-  <t-icon type="wode" dot badage="99+" />
-  <t-icon type="wode" dot badage="1" />
-  <t-icon type="wode" dot />
+  <t-icon type="wode" size="50px" dot badage="999+" />
+  <t-icon type="wode" size="50px" dot badage="99+" />
+  <t-icon type="wode" size="50px" dot badage="1" />
+  <t-icon type="wode" size="50px" dot />
 
   <h3>通用图标集合</h3>
   <ul class="demo-icon-list">
@@ -225,40 +225,34 @@
 
 <style lang="scss" scoped>
 .demo-icon-list {
-  overflow: hidden;
+  width: 900px;
+  overflow: auto;
   list-style: none;
-  padding: 0;
-  border-top: 1px solid;
-  border-left: 1px solid;
-  border-right: 1px solid;
-  border-bottom: 1px solid;
-  border-radius: 1px;
-  border-color: cadetblue;
+  border: 1px solid cadetblue;
   display: grid;
   place-items: center center;
 
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 
   .icon-item {
-    height: 90px;
     font-size: 10px;
     transition: background-color;
-
-    :hover {
-      background-color: cadetblue;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     .demo-svg-icon {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
       height: 100%;
       cursor: pointer;
-
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       .icon-name {
-        margin-top: 2px;
         text-align: center;
+      }
+      :hover {
+      background-color: cadetblue;
       }
     }
   }
