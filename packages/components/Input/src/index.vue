@@ -31,6 +31,7 @@ const isEnter = ref(true)
 const isClearAbled = ref(false)
 const clearValue = () => {
   inputEmits('update:modelValue', '')
+  isClearAbled.value = false
 }
 
 // 密码框功能
@@ -43,11 +44,11 @@ const isShowEye = computed(() => {
   return inputProps.showPassword && inputProps.modelValue && !inputProps.clearable
 })
 const changeType = () => {
-  if (ipt.value.type === 'password') {
+  if (ipt.value.type === 'password')
     ipt.value.type = attrs.type || 'text'
-    return
-  }
-  ipt.value.type = 'password'
+
+  else
+    ipt.value.type = 'password'
 }
 
 // 数据更新功能
@@ -88,6 +89,11 @@ const styleClass = computed(() => {
       <slot name="prepend" />
     </div>
 
+    <!-- 前置图标控件 -->
+    <div v-if="isShowPrefixIcon" class="t-input__prefix no-cursor">
+      <t-icon :type="inputProps.prefixIcon" size="15px" />
+    </div>
+
     <!-- 输入框本框 -->
     <input
       ref="ipt"
@@ -100,19 +106,16 @@ const styleClass = computed(() => {
 
     <!-- 删除控件，后面图标会改成Icon -->
     <div v-if="inputProps.clearable && isClearAbled" class="t-input__suffix" @click="clearValue">
-      <img src="../style/error.png">
+      <t-icon type="cuowu" size="15px" />
     </div>
     <!-- 展示控件，后面图标会改成Icon -->
     <div v-show="isShowEye" class="t-input__suffix" @click="changeType">
-      <img src="../style/Show.png" alt="密码可见">
+      <t-icon type="liulan" size="15px" />
     </div>
 
-    <!-- 图标控件 -->
-    <div v-if="isShowPrefixIcon" class="t-input__prefix no-cursor">
-      <t-icon :type="inputProps.prefixIcon" />
-    </div>
+    <!-- 后置图标控件 -->
     <div v-if="isShowSuffixIcon" class="t-input__suffix no-cursor">
-      <t-icon :type="inputProps.suffixIcon" />
+      <t-icon :type="inputProps.suffixIcon" size="15px" />
     </div>
 
     <!-- 后置复合控件 -->
